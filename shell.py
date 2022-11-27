@@ -26,7 +26,8 @@ l = len(items)
 
 btc_price = client.get("/api/v2/peatio/public/markets/btcusdt/depth?limit=1")
 btc_last_trade = client.get("/api/v2/peatio/public/markets/btcusdt/trades?limit=1")
-
+xkr_price = client.get("/api/v2/peatio/public/markets/xkrusdt/depth?limit=1")
+xkr_last_trade = client.get("/api/v2/peatio/public/markets/xkrusdt/trades?limit=1")
 # Spør om du vil bruke default API keys
 while True:
     api_spørsmål = input("\nVil du bruke default API keys? Hvis du konfigurerte de i filen, si ja (Y/n) ")
@@ -145,8 +146,8 @@ class exbitron_shell(Cmd):
             print(f"\nSiste trade var på {btc_price}\n")
           
         if inp == 'xkr':
-            print("xkr")
-        
+            xkr_price = float(xkr_last_trade[0]['price'])
+            print(f"\nSiste trade var på {xkr_price}\n")
         
     def help_price(self):
         print("Printer ut bid prisen av btc")
