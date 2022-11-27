@@ -7,6 +7,9 @@ import math
 import time
 import sys
 
+
+cg = CoinGeckoAPI()
+
 # Written by @DanielBoye
 
 # Sette default API keys. Må bli endret selv i python filen
@@ -74,6 +77,13 @@ for i, item in enumerate(items):
     time.sleep(0.0005)
     # Oppdaterer baren 
     printProgressBar(i + 1, l, prefix = 'Loading API:', suffix = 'Complete', length = 50)
+
+# Total value av wallet
+
+btcprice = cg.get_price(ids='hive,steem',vs_currencies='btc')
+
+print(btcprice)
+
 
 # Hente verdier ifra wallet som oversikt
 def oversikt():
