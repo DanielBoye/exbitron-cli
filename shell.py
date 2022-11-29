@@ -1,11 +1,6 @@
 import os
 import exbitron
-import hashlib, hmac
-import requests
-import json
-import math
 import time
-import sys
 from cmd import Cmd
 
 # Written by @DanielBoye
@@ -133,13 +128,21 @@ class exbitron_shell(Cmd):
         print(f"\nBitcoin ask: {btc_ask}")
     def help_ask(self):
         print("Printer ut ask prisen av btc")
-
+    
+    # Printer ut bid prisen av en coin.
     def do_bid(self, inp):
-        btc_bid = float(btc_price['bids'][0][0])
-        print(f"\nBitcoin bid: {btc_bid}\n")
-    def help_ask(self):
-        print("Printer ut bid prisen av btc")
-
+        if inp == 'btc':
+            btc_bid = float(btc_price['bids'][0][0])
+            print(f"\nBitcoin bid: {btc_bid}\n")
+        if inp == 'xkr':
+            xkr_bid = float(xkr_price['bids'][0][0])
+            print(f"\Kryptokrona bid: {xkr_bid}\n")
+    def help_bid(self):
+        print("\nPrinter ut bid prisen på Exbitron")
+        print("\nBruk er bid {ticker}")
+        print("\nBid vises default i paret {ticker}/usdt\n")
+        
+    # Printer ut prisen av en coin.
     def do_price(self, inp):
         if inp == 'btc':
             btc_price = float(btc_last_trade[0]['price'])
@@ -148,9 +151,13 @@ class exbitron_shell(Cmd):
         if inp == 'xkr':
             xkr_price = float(xkr_last_trade[0]['price'])
             print(f"\nSiste trade var på {xkr_price}\n")
-        
     def help_price(self):
-        print("Printer ut bid prisen av btc")
+        print("\nPrinter ut prisen av en coin")
+        print("\nBruk: price {ticker}")
+        print("\nPris vises default i paret {ticker}/usdt\n")
+    
+    def do_test(selv, inp):
+        ticker_price = float(inp + _last_trade[0]['price'])
 
 
     
