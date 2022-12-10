@@ -54,6 +54,23 @@ Spread til btc er på: 2.44 %
 ### Andre
 - `kontakt` - Kontaktinformasjon til forfatteren.
 
+# TODO
+
+- Få en bedre wallet oversikt 
+- Utføre trades 
+- Stoppe, lage og redigere live ordere
+- Bedre design på å lukke scriptet med ctrl c uten å printe ut "KeyboardInterrupt"
+- Mer features ifra API-en
+- Skrive prosjektet om til engelsk
+- Skrive om programmet til C++ 
+
+
+
+Store endringer som er kule men vanskelige
+
+- Få trading data representert rett i terminalen som egne "candels"
+- Ha et mer persistent program som tar heller å spør deg en gang om nøkklene, og husker dem etter det
+
 
 # Bidra
 
