@@ -7,8 +7,6 @@ from cmd import Cmd
 
 # Sette default API keys. Må bli endret selv i python filen
 client = exbitron.Client(
-    access_key = "",
-    secret_key = "",
 )
 
 # Alle valg til spørsmål om API keys
@@ -19,11 +17,6 @@ nei_valg = {'nei', 'Nei', 'no', 'NO', 'No', 'n', 'N'}
 items = list(range(0, 57))
 l = len(items)
 
-btc_price = client.get("/api/v2/peatio/public/markets/btcusdt/depth?limit=1")
-btc_last_trade = client.get("/api/v2/peatio/public/markets/btcusdt/trades?limit=1")
-xkr_price = client.get("/api/v2/peatio/public/markets/xkrusdt/depth?limit=1")
-xkr_last_trade = client.get("/api/v2/peatio/public/markets/xkrusdt/trades?limit=1")
-test_trade = client.get("/api/v2/peatio/public/markets/xkrusdt/trades?limit=1")
 # Spør om du vil bruke default API keys
 while True:
     api_spørsmål = input("\nVil du bruke default API keys? Hvis du konfigurerte de i filen, si ja (Y/n) ")
@@ -32,6 +25,7 @@ while True:
         print("\nSkriv inn dine Exbitron API keys")
         access_key_input = input("\nAccess key: ")
         secret_key_input = input("\nSecret key ")
+        
         
         # Lagrer keysene inn i exbitron clienten
         client = exbitron.Client(
@@ -73,12 +67,13 @@ print("\n")
 # All kode for input som blir akseptert i shellet
 class exbitron_shell(Cmd):
     prompt = 'exbitron >> '
+    # https://patorjk.com/software/taag/#p=display&h=2&v=3&f=Slant&t=EXBITRON%20API%20CLI
     intro = """
-    _______  __ ____  ______________  ____  _   __     ___    ____  ____     _____ __  __________    __ 
-   / ____/ |/ // __ )/  _/_  __/ __ \/ __ \/ | / /    /   |  / __ \/  _/    / ___// / / / ____/ /   / / 
-  / __/  |   // __  |/ /  / / / /_/ / / / /  |/ /    / /| | / /_/ // /      \__ \/ /_/ / __/ / /   / /  
- / /___ /   |/ /_/ // /  / / / _, _/ /_/ / /|  /    / ___ |/ ____// /      ___/ / __  / /___/ /___/ /___
-/_____//_/|_/_____/___/ /_/ /_/ |_|\____/_/ |_/    /_/  |_/_/   /___/     /____/_/ /_/_____/_____/_____/
+    _______  __ ____  ______________  ____  _   __   ___    ____  ____   ________    ____
+   / ____/ |/ // __ )/  _/_  __/ __ \/ __ \/ | / /  /   |  / __ \/  _/  / ____/ /   /  _/
+  / __/  |   // __  |/ /  / / / /_/ / / / /  |/ /  / /| | / /_/ // /   / /   / /    / /  
+ / /___ /   |/ /_/ // /  / / / _, _/ /_/ / /|  /  / ___ |/ ____// /   / /___/ /____/ /   
+/_____//_/|_/_____/___/ /_/ /_/ |_|\____/_/ |_/  /_/  |_/_/   /___/   \____/_____/___/ 
     
     \nVelkommen tilbake!\n\nSkriv ? for å få en liste over alle kommandoene til programmet   
     """
@@ -124,46 +119,45 @@ class exbitron_shell(Cmd):
     def help_kontakt(self):
         print("Viser kontaktinformasjon til forfatteren")
     
+    # Ask
     def do_ask(self, inp):
-        btc_ask = float(btc_price['asks'][0][0])
-        print(f"\nBitcoin ask: {btc_ask}")
+        ask_api_request = client.get("/api/v2/peatio/public/markets/" +  inp + "usdt/depth?limit=1")
+        crypto_bid = float(ask_api_request['asks'][0][0])
+        print(f"\nAsk til {inp}: {crypto_bid}\n")
     def help_ask(self):
-        print("Printer ut ask prisen av btc")
+        print("\nPrinter ut ask prisen av et valgfritt par")
+        print("\nFor å printe ut ask prisen, skriv ask {symbol} siden den autovelger paret /usdt\n")
     
-    # Printer ut bid prisen av en coin.
+    # Bid
     def do_bid(self, inp):
-        if inp == 'btc':
-            btc_bid = float(btc_price['bids'][0][0])
-            print(f"\nBitcoin bid: {btc_bid}\n")
-        if inp == 'xkr':
-            xkr_bid = float(xkr_price['bids'][0][0])
-            print(f"\Kryptokrona bid: {xkr_bid}\n")
+        bid_api_request = client.get("/api/v2/peatio/public/markets/" +  inp + "usdt/depth?limit=1")
+        crypto_bid = float(bid_api_request['bids'][0][0])
+        print(f"\nBid til {inp}: {crypto_bid}\n")
     def help_bid(self):
-        print("\nPrinter ut bid prisen på Exbitron")
-        print("\nBruk er bid {ticker}")
-        print("\nBid vises default i paret {ticker}/usdt\n")
-        
-    # Printer ut prisen av en coin.
-    def do_price(self, inp):
-        if inp == 'btc':
-            btc_price = float(btc_last_trade[0]['price'])
-            print(f"\nSiste trade var på {btc_price}\n")
-          
-        if inp == 'xkr':
-            xkr_price = float(xkr_last_trade[0]['price'])
-            print(f"\nSiste trade var på {xkr_price}\n")
+        print("\nPrinter ut bid prisen av et valgfritt par")
+        print("\nFor å printe ut bid prisen, skriv bid {symbol} siden den autovelger paret /usdt\n")
+
+    # Spread
+    def do_spread(self, inp):
+        spread_api_request = client.get("/api/v2/peatio/public/markets/" +  inp + "usdt/depth?limit=1")
+        ask = float(spread_api_request['asks'][0][0])
+        bid = float(spread_api_request['bids'][0][0])
+        spread = ask - bid
+        print(f"\nSpread til {inp} er på: " + str((round(spread / ask, 4)) * 100) + "%\n")
+    def help_spread(self):
+        print("\nPrinter ut spread-en i et trading par")
+        print("\nSpread-et er satt i prosent og printes ut som prosent\n")
+
+
+    # Pris
+    def do_price(selv, inp):
+        special_api_request = client.get("/api/v2/peatio/public/markets/" +  inp + "usdt/trades?limit=1")
+        crypto_price = float(special_api_request[0]['price'])
+        print(f"\nPrisen til {inp} er {crypto_price}\n")    
     def help_price(self):
-        print("\nPrinter ut prisen av en coin")
-        print("\nBruk: price {ticker}")
-        print("\nPris vises default i paret {ticker}/usdt\n")
-    
-    def do_test(selv, inp):
-        ticker_price = float(inp + _last_trade[0]['price'])
-
-
-    
-
-
+        print("\nPrinter ut prisen av et valgfritt par")
+        print("\nFor å printe ut prisen av noe, skriv price {symbol} siden den autovelger paret /usdt")
+        print("\nPris vises i siste trade på platformen\n")
 
 
 printProgressBar(0, l, prefix = 'Loading Shell:', suffix = 'Complete', length = 50)
