@@ -18,7 +18,7 @@ API-en som er brukt er [Exbitron](https://www.exbitron.com/kb/api.html) sin. All
 # Setup og kjør 
 
 1. Klon dette prosjektet  `git clone git@github.com:danielboye/exbitron-cli.git`
-2. Følg [API]() guiden til å skaffe deg API nøkklene ifra Exbitron som trengs for å koble seg til API-en
+2. Følg [API](api.md) guiden til å skaffe deg API nøkklene ifra Exbitron som trengs for å koble seg til API-en
 3. Kjør `./setup.shy`
 4. Kjør `python cli.py`
 
