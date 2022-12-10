@@ -23,6 +23,7 @@ btc_price = client.get("/api/v2/peatio/public/markets/btcusdt/depth?limit=1")
 btc_last_trade = client.get("/api/v2/peatio/public/markets/btcusdt/trades?limit=1")
 xkr_price = client.get("/api/v2/peatio/public/markets/xkrusdt/depth?limit=1")
 xkr_last_trade = client.get("/api/v2/peatio/public/markets/xkrusdt/trades?limit=1")
+test_trade = client.get("/api/v2/peatio/public/markets/xkrusdt/trades?limit=1")
 # Spør om du vil bruke default API keys
 while True:
     api_spørsmål = input("\nVil du bruke default API keys? Hvis du konfigurerte de i filen, si ja (Y/n) ")
