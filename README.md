@@ -8,7 +8,8 @@ Command line interface til nettstedet [Exbitron](https://www.exbitron.com/)
 - [API dokumentasjon](#api-dokumentasjon)
 - [Setup og kjør](#setup-og-kjør)
 - [Kommandoer](#kommandoer)
-- [Bidragsytere]()
+- [Bidra](#bidra)
+- [Bidragsytere](#bidragsytere)
 - [Lisens]()
 
 # API Dokumentasjon
@@ -53,12 +54,22 @@ Spread til btc er på: 2.44 %
 ### Andre
 - `kontakt` - Kontaktinformasjon til forfatteren.
 
-# Bidragsytere
 
-## Pull Request
+# Bidra
+
+## Pull request
+
+Jeg setter pris på alle bidrag enten det er små endringer som dokumentasjon av kildekode til større forbedring av
+kode. Den enkleste måten er å lage en gaffel og deretter lage en trekkforespørsel til vår mastergren.
+
+Flere features kommer etterhvert, og det er bare å lage nye "issues" for noe funksjoner dere ønsker, så skal jeg ta en titt på dem
+
+# Bidragsytere
 
 Følgende bidragsytere har enten vært med på å starte dette prosjektet, har bidratt
 kode, aktivt vedlikeholder den (inkludert dokumentasjon), eller på andre måter
 være fantastiske bidragsytere til dette prosjektet. **Vi vil gjerne bruke et øyeblikk på å gjenkjenne dem.**
 
 [<img src="https://github.com/danielboye.png?size=72" alt="danielboye" width="72">](https://github.com/danielboye)
+
+# Lisens
