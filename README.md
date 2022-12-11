@@ -2,7 +2,12 @@
 
 # ![Exbitron](https://cdn.discordapp.com/attachments/994252098571079740/1051226477875691660/image.png)
 
+
 Command line interface til nettstedet [Exbitron](https://www.exbitron.com/)
+
+---
+
+Translations | [EN](README.md) | [NO](README_NO.md) |
 
 # Innhold
 - [API dokumentasjon](#api-dokumentasjon)
