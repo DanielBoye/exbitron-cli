@@ -8,7 +8,7 @@ Command line interface to the website [Exbitron](https://www.exbitron.com/)
 
 Translations | [EN](README.md) | [NO](README_NO.md) |
 
-# Innhold
+# Contents
 - [API documentation](#api-documentation)
 - [Setup and Run](#setup-and-run)
 - [Commands](#commands)
