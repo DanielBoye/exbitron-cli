@@ -2,49 +2,49 @@
 
 # ![Exbitron](https://cdn.discordapp.com/attachments/994252098571079740/1051226477875691660/image.png)
 
-Command line interface til nettstedet [Exbitron](https://www.exbitron.com/)
+Command line interface to the website [Exbitron](https://www.exbitron.com/)
 
 ---
 
 Translations | [EN](README.md) | [NO](README_NO.md) |
 
 # Innhold
-- [API dokumentasjon](#api-dokumentasjon)
-- [Setup og kjør](#setup-og-kjør)
-- [Kommandoer](#kommandoer)
+- [API documentation](#api-documentation)
+- [Setup and Run](#setup-and-run)
+- [Commands](#commands)
 - [TODO](#todo)
-- [Bidra](#bidra)
-- [Bidragsytere](#bidragsytere)
-- [Lisens]()
+- [Contribute](#contribute)
+- [Contributors](#contributors)
+- [License](#licence)
 
-# API Dokumentasjon
+# API Documentation
 
-API-en som er brukt er [Exbitron](https://www.exbitron.com/kb/api.html) sin. All informasjon brukt kommer herifra. For å bygge ut dette produktet er det bare å implementere flere endpoints.
+The API that is used is based upon the API [Exbitron](https://www.exbitron.com/kb/api.html) has. All information and statistics are coming from here. To build out this CLI to every function they have, a person just need to add more endpoints. It just takes time, so if your feature is not here, make a issue under this project and we will take a look at it.
 
-# Setup og kjør 
+# Setup and Run 
 
-1. Klon dette prosjektet  `git clone git@github.com:danielboye/exbitron-cli.git`
-2. Følg [API](api.md) guiden til å skaffe deg API nøkklene ifra Exbitron som trengs for å koble seg til API-en
-3. Kjør `./setup.shy`
-4. Kjør `python cli.py`
+1. Clone this project `git clone git@github.com:danielboye/exbitron-cli.git`
+2. Follow the [API](api.md) guide to get access to your API keys.
+3. Run `./setup.shy`
+4. Run `python cli.py`
 
-# Kommandoer
+# Commands
 
-Mer kommandoer kommer etterhvert. Alt kan bli implenentert ifra API-en inn i CLI
+More commands are comming. Everything can be implimented, it just takes time. 
 
 ### Wallet
-- `oversikt` - Meny med oversikt over aktive ordre og wallet.
-- `wallet` - Returnerer hva du har i walleten din. 
-- `exit` - Lukk programmet.
+- `oversikt` - Main menu with overview over active orders and your wallet.
+- `wallet` - Returns the value of your wallet. 
+- `exit` - Close the program.
 
-### Priser
+### Price
 
-- `price <ticker>` - Prisen av et trading par.
-- `ask <ticker>` - Ask prisen i ordreboken til et valgfritt tradingpar.
-- `bid <ticker>` - Bid prisen i ordreboken til et valgfritt tradingpar.
-- `spread <ticker>` - Spread vises i % på et valgfritt tradingpar.
+- `price <ticker>` - Price of a trading pair.
+- `ask <ticker>` - Ask price from the orderbooks to a optional trading pair.
+- `bid <ticker>` - Bid price from the orderbooks to a optional trading pair.
+- `spread <ticker>` - Spread showes in % on a optional trading pair.
 
-Eksempel på bruk:
+Example:
 
 
 ```shell
@@ -53,45 +53,45 @@ spread btc
 Output
 
 ```shell
-Spread til btc er på: 2.44 %
+Spread on btc is: 2.44 %
 ```
 
-### Andre
-- `kontakt` - Kontaktinformasjon til forfatteren.
+### Other
+- `kontakt` - Contact information to the author.
 
 # TODO
 
-- Få en bedre wallet oversikt 
-- Utføre trades 
-- Stoppe, lage og redigere live ordere
-- Bedre design på å lukke scriptet med ctrl c uten å printe ut "KeyboardInterrupt"
-- Mer features ifra API-en
-- Skrive prosjektet om til engelsk
-- Skrive om programmet til C++ 
-- Lage programmet om til en kommando i linux med hjelp av et bash script. Som "neofetch" bare som "exbitron" som launcher clienten 
+- Get a better wallet overview
+- Execute trades
+- Stop, create and edit live orders
+- Better design for closing the script with ctrl c without printing out "KeyboardInterrupt"
+- More features from the API
+- Rewrite the project into English
+- Rewrite the program in C++
+- Convert the program into a bash command in linux with the help of a bash script. As "neofetch" only as "exbitron" that launches the client
 
-Store endringer som er kule men vanskelige
+Big changes that are cool but a little bit more difficult
 
-- Få trading data representert rett i terminalen som egne "candels"
-- Ha et mer persistent program som tar heller å spør deg en gang om nøkklene, og husker dem etter det
+- Get trading data represented as a chart in the terminal 
+- Have a more persistent program that rather asks you once for the keys, and remembers them after that
 
-# Bidra
+# Contribute
 
 ## Pull request
 
-Jeg setter pris på alle bidrag enten det er små endringer som dokumentasjon av kildekode til større forbedring av
-kode. Den enkleste måten er å lage en gaffel og deretter lage en trekkforespørsel til vår mastergren.
+I appreciate all contributions whether they are small changes such as documentation of source code to major improvement of
+code. The easiest way is to create a fork and then make a pull request to our master branch.
 
-Flere features kommer etterhvert, og det er bare å lage nye "issues" for noe funksjoner dere ønsker, så skal jeg ta en titt på dem
+More features will come eventually, and it's just a matter of creating new "issues" for any features you want, and I'll take a look at them
 
-# Bidragsytere
+# Contributors
 
-Følgende bidragsytere har enten vært med på å starte dette prosjektet, har bidratt
-kode, aktivt vedlikeholder den (inkludert dokumentasjon), eller på andre måter
-være fantastiske bidragsytere til dette prosjektet. **Vi vil gjerne bruke et øyeblikk på å gjenkjenne dem.**
+The following contributors have either helped start this project, have contributed
+code, actively maintain it (including documentation), or in other ways
+be wonderful contributors to this project. **We'd like to take a moment to recognize them.**
 
 [<img src="https://github.com/danielboye.png?size=72" alt="danielboye" width="72">](https://github.com/danielboye)
 
-# Lisens
+# License
 
-Lisensen er MIT
+The license is MIT
