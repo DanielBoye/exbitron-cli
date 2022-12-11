@@ -4,6 +4,10 @@
 
 Command line interface til nettstedet [Exbitron](https://www.exbitron.com/)
 
+---
+
+Translations | [EN](README.md) | [NO](README_NO.md) |
+
 # Innhold
 - [API dokumentasjon](#api-dokumentasjon)
 - [Setup og kjør](#setup-og-kjør)
@@ -11,7 +15,7 @@ Command line interface til nettstedet [Exbitron](https://www.exbitron.com/)
 - [TODO](#todo)
 - [Bidra](#bidra)
 - [Bidragsytere](#bidragsytere)
-- [Lisens]()
+- [Lisens](#lisens)
 
 # API Dokumentasjon
 
