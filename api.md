@@ -30,15 +30,13 @@ Du vil så få nøklene dine slik.
 
 ## 3. Rediger cli.py
 
-Kopier dine Access Keys og Secret Keys, og sett de inn i cli.py filen 
+Kopier dine Access Keys og Secret Keys, og sett de inn i .env filen eller sett enviroment variables i ditt OS.
 
 Eksempel:
 
 ```
-client = exbitron.Client(
-    access_key = "fe12eb8b793dbbc9",
-    secret_key = "82f57fe6471b7f0e2bc665f97e41a7",
-)
+ACCESS_KEY=fe12eb8b793dbbc9
+SECRET_KEY=82f57fe6471b7f0e2bc665f97e41a7
 ```
 
 ---

@@ -1,12 +1,19 @@
 import os
 import exbitron
 import time
+
 from cmd import Cmd
+from dotenv import load_dotenv
+from sys import platform
+
+load_dotenv()
 
 # Written by @DanielBoye
 
-# Sette default API keys. Må bli endret selv i python filen
+# Sette default API keys. Må bli endret selv i .env filen eller i OS med enviroment variables
 client = exbitron.Client(
+    access_key=os.getenv('ACCESS_KEY'),
+    secret_key=os.getenv('SECRET_KEY')
 )
 
 # Alle valg til spørsmål om API keys
@@ -89,7 +96,11 @@ class exbitron_shell(Cmd):
         print('Lukke applikasjonen')
     # Tøm skjermen
     def do_clear(self, inp):
-        os.system('cls')
+        if platform == "darwin":
+            os.system('clear')
+        else:
+            os.system('cls')
+        
     def help_clear(self):
         print("Tømmer terminalskjermen.")
     
@@ -167,6 +178,9 @@ for i, item in enumerate(items):
     # Oppdaterer baren 
     printProgressBar(i + 1, l, prefix = 'Loading API:', suffix = 'Complete', length = 50)
 
-
-os.system('cls')
+if platform == "darwin":
+    os.system('clear')
+else:
+    os.system('cls')
+    
 exbitron_shell().cmdloop()

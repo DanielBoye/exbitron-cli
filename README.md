@@ -9,13 +9,20 @@ Command line interface to the website [Exbitron](https://www.exbitron.com/)
 Translations | [EN](README.md) | [NO](README_NO.md) |
 
 # Contents
-- [API documentation](#api-documentation)
+- [Exbitron API CLI](#exbitron-api-cli)
+- [](#)
+- [Contents](#contents)
+- [API Documentation](#api-documentation)
 - [Setup and Run](#setup-and-run)
 - [Commands](#commands)
+    - [Wallet](#wallet)
+    - [Price](#price)
+    - [Other](#other)
 - [TODO](#todo)
 - [Contribute](#contribute)
+  - [Pull request](#pull-request)
 - [Contributors](#contributors)
-- [License](#licence)
+- [License](#license)
 
 # API Documentation
 
@@ -91,6 +98,7 @@ code, actively maintain it (including documentation), or in other ways
 be wonderful contributors to this project. **We'd like to take a moment to recognize them.**
 
 [<img src="https://github.com/danielboye.png?size=72" alt="danielboye" width="72">](https://github.com/danielboye)
+[<img src="https://github.com/mjovanc.png?size=72" alt="mjovanc" width="72">](https://github.com/mjovanc)
 
 # License
 
