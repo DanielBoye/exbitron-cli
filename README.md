@@ -8,7 +8,7 @@ Command line interface to the website [Exbitron](https://www.exbitron.com/)
 
 ### This project is put on a halt because of the current ongoint issues with the Exbitron platform. 
 
-### For latest news and announcements please join our social networks: [Discord](https://discord.com/invite/t6z5MN6dEK), [Telegram](https://t.me/joinchat/VPipvQT8SmFlZDc0)
+### For latest news and announcements please join their social networks: [Discord](https://discord.com/invite/t6z5MN6dEK), [Telegram](https://t.me/joinchat/VPipvQT8SmFlZDc0)
 
 ---
 
