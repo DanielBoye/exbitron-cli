@@ -6,7 +6,7 @@ Command line interface to the website [Exbitron](https://www.exbitron.com/)
 
 ---
 
-### This project is put on a halt because of the current ongoint issues with the Exbitron platform. 
+### Exbitron is expected to be up and running this month, so I will work more on this project when Exbitron 2.0 is launched. 
 
 ### For latest news and announcements please join their social networks: [Discord](https://discord.com/invite/t6z5MN6dEK), [Telegram](https://t.me/joinchat/VPipvQT8SmFlZDc0)
 
