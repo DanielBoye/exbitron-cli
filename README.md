@@ -74,19 +74,19 @@ Spread on btc is: 2.44 %
 
 # TODO
 
-- Get a better wallet overview
-- Execute trades
-- Stop, create and edit live orders
-- Better design for closing the script with ctrl c without printing out "KeyboardInterrupt"
-- More features from the API
-- Rewrite the project into English
-- Rewrite the program in C++
-- Convert the program into a bash command in linux with the help of a bash script. As "neofetch" only as "exbitron" that launches the client
+- [ ] Get a better wallet overview
+- [ ] Execute trades
+- [ ] Stop, create and edit live orders
+- [ ] Better design for closing the script with ctrl c without printing out "KeyboardInterrupt"
+- [ ] More features from the API
+- [ ] Rewrite the project into English
+- [ ] Rewrite the program in C++
+- [ ] Convert the program into a bash command in linux with the help of a bash script. As "neofetch" only as "exbitron" that launches the client
 
 Big changes that are cool but a little bit more difficult
 
-- Get trading data represented as a chart in the terminal 
-- Have a more persistent program that rather asks you once for the keys, and remembers them after that
+- [ ] Get trading data represented as a chart in the terminal 
+- [ ] Have a more persistent program that rather asks you once for the keys, and remembers them after that
 
 # Contribute
 
